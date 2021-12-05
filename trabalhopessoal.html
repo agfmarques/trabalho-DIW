@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Trabalho Pessoal</title>
+  </head>
+  <body onload="carregaPerfil ()"> 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+   <a class="navbar-brand h1 mb-0" href="#">Perfil</a>
+
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
+       <span class="navbar-toggler-icon"></span>
+   </button>
+
+   <div class="collapse navbar-collapse" id="navbarSite">
+
+<ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+
+<a class="nav-link" href="#projetos">Projeto</a>
+
+    </li>
+
+    <li class="nav-item">
+
+        <a class="nav-link" href="#trabalho">Experiência</a>
+        
+            </li>
+
+            <li class="nav-item">
+
+                <a class="nav-link" href="#">Repositório Github</a>
+                
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="#">Conteúdo</a>
+                        
+                            </li>
+
+</ul>
+
+<ul class="navbar-nav ml-auto">
+
+<li class="nav-item dropdown">
+
+<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="navDrop">
+    Social
+</a>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="https://www.instagram.com/angelogabriel.marques/">Instagram</a>
+<a class="dropdown-item" href="#">Twitter</a>
+</div>
+
+</li>
+
+</ul>
+<form class="form-inline">
+
+<input class="form-control ml-3 mr-1" type="search" placeholder="Buscar...">
+<button class="btn btn-default" type="Submit">Ok</button>
+
+</form>
+
+   </div>
+
+</nav>
+
+
+
+
+
+
+
+<main class="container">
+
+
+
+    <div class="container">
+        <br><br>
+    <h1 style= "text-align: center;">
+    
+        Pesquisar Usuário no GitHub
+    
+    </h1>
+        <form id="myForm" autocomplete="off">
+            <div class="form-group">
+                <input type="text" class="form-control" id="search" placeholder="Pesquisar Username (clicar na imagem para redirecionar após realizar a pesquisa)" required>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-danger btn-block">
+                    Pesquisar Usuário
+                </button>
+            </div>
+        </form>
+        <div id="result"></div>
+</div>
+
+
+
+    <div id= "tela">
+   
+    </div>
+    
+    <script>
+          function carregaPerfil () {
+              let xhr = new XMLHttpRequest ();
+    
+            xhr.onload = function ()  {
+                //alert ('Retorno da requisição: \n' + this.responseText);
+                let data = JSON.parse (this.responseText);
+    
+    
+                let perfilStr = `<div class="card" style="width: 18rem;" >
+            <img class="card-img-top" src="${data.avatar_url}" alt="Card image cap">
+            <div class="card-body">
+            <div class= "row d-flex justify-content-center">
+              <h5 class="card-title">${data.name}<br>(${data.login})</h5>
+              <p class="card-text">${data.bio}</p>
+            <a href="${data.html_url}" target="_blank" class="btn btn-primary">Perfil no GitHub</a>
+                
+            </div>
+          </div>   `;
+          document.getElementById ('tela').innerHTML = perfilStr;
+    
+            }
+    
+            xhr.onerror = function () {
+              alert (`Erro na requisição \nCódigo: ${this.status} - ${this.statusText} `);
+    
+            }
+    
+              xhr.open ('GET', 'https://api.github.com/users/agfmarques');
+              xhr.send ();
+    
+    
+          }
+    
+    
+
+
+
+
+
+
+
+
+    
+    </script>
+    
+
+
+</section>
+
+
+<section>
+<div class="col-12 col-sm-12 col-md-4 " id="projetos">
+    <h1>Projetos</h1>
+</div>
+
+
+<div class="col-12 col-sm-12 col-md-11">
+    <div class="dropdown angelo" >
+        <button class="btn btn-secondary dropdown-toggle botao" type="button" id="dropdownMenuButton"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Categorias
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item botao_cat" href="#">Web Sites</a>
+          <a class="dropdown-item botao_cat" href="#">Arte Gráfica</a>
+          <a class="dropdown-item botao_cat" href="#">Podcast</a>
+        </div>
+      </div>
+</div>
+</section>
+
+
+
+<section class="row imagem">
+
+        <div class="col-12 col-sm-12 col-md-3">
+        <img src="NOT.png" class="picture2" >
+        <h2>Projeto A </h2>
+        </div>
+        
+        <div class="col-12 col-sm-12 col-md-3">
+        <img src="NOT.png" class="picture2">
+        <h2>Projeto B</h2>
+        </div>
+        
+        <div class="col-12 col-sm-12 col-md-3">
+        <img src="NOT.png" class="picture2">
+            <h2>Projeto C</h2>
+    </div>
+    <div class="col-12 col-sm-12 col-md-3">
+        <img src="NOT.png" class="picture2">
+            <h2>Projeto D</h2>
+    </div>
+</section>
+
+
+
+<section class="row experiencia">
+    <div class="col-12 col-sm-12 col-md-12" id="trabalho">
+
+<h1>Experiência</h1>
+</div>
+
+<div class="col-12 col-sm-12 col-md-3">
+<img src="Forum.jpg" class="picture3" >
+</div>
+<div class="col-12 col-sm-12 col-md-9">
+    <h2>Cargo/Função: Guarda Mirim</h2>
+    <p>Atuei como Guarda Mirim da comarca de Corinto-MG, onde prestava serviços internos aos servidores e atendendo diretamente ao público.</p>
+<h3><b>Período: </b>02/2019 à 02/2021</h3>
+</div>
+   
+
+
+<div class="col-12 col-sm-12 col-md-3">
+    <img src="CASAF.png" class="picture3" >
+    </div>
+    <div class="col-12 col-sm-12 col-md-9">
+        <h2>Cargo/Função: Auxiliar de Estoque</h2>
+        <p>Atuei como auxiliar de estoque, onde contribuia para organização da loja e atendendo diretamente ao público.</p>
+    <h3><b>Período: </b>05/2021 à 08/2021</h3>
+    </div>
+
+
+    <div class="col-12 col-sm-12 col-md-3 ">
+        <img src="DSINFO.jpg" class="picture3" >
+        </div>
+        <div class="col-12 col-sm-12 col-md-9">
+            <h2>Cargo/Função: Técnico de Informática</h2>
+            <p>Atuo como Técnico de Informática, onde faço manutenção de computadores e atendo diretamente ao público.</p>
+        <h3><b>Período: </b>03/2021 até o momento.</h3>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <section class="texto3">
+            <div class="col-12 col-sm-12 col-md-6">
+                <h1>Repósitorio Github</h1>
+            </div>
+
+
+            <section class="row imagem2">
+
+                <div class="col-12 col-sm-12 col-md-4">
+                <img src="NOT-depositphotos-bgremover.png" class="picture4" >
+                <h2> Repositório A </h2>
+                </div>
+                
+                <div class="col-12 col-sm-12 col-md-4">
+                <img src="NOT-depositphotos-bgremover.png" class="picture4">
+                <h2>Repositório B</h2>
+                </div>
+                
+                <div class="col-12 col-sm-12 col-md-4">
+                <img src="NOT-depositphotos-bgremover.png" class="picture4">
+                    <h2>Repositório C</h2>
+            </div>
+        </section>
+
+
+        
+        <section class="texto4">
+        <div class="col-12 col-sm-12 col-md-12">
+            <h1>Recomendação de Conteúdo</h1>
+        </div>
+    </section>
+
+
+        <section class=" row videos ">
+
+            
+
+<div class="container-a col-12 col-sm-12 col-md-3"><iframe width="250" height="250" src="https://www.youtube.com/embed/m3J0r--l-9w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h3>Dianho-Meme</h3>
+</div>
+<div class="container-a col-12 col-sm-12 col-md-3"><iframe width="250" height="250" src="https://www.youtube.com/embed/4tJicABKq_w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h3>Trailer Homem-Aranha 3</h3>
+</div>
+<div class="container-a col-12 col-sm-12 col-md-3"><iframe width="250" height="250" src="https://www.youtube.com/embed/9hWQyHE-q-M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h3>Música Nova Era(Angra)</h3>
+</div>
+
+        </section>
+
+
+
+
+
+
+        
+</section>
+
+
+
+
+
+
+
+
+
+
+</main>
+
+<!-- Footer -->
+<footer class="row rodape">
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3 col-12 col-sm-12 col-md-12">© 2021 Copyright-Disciplina de Desenvolvimento de Interfaces Web-<b>ICEI PUC-MINAS</b>
+        <div class="col-12 col-sm-12 col-md-12">
+            <img src="logo_pucminas.png" class="picture6" >
+            </div>
+    </div>
+    <!-- Copyright -->
+
+   
+    
+    
+    </div>
+  
+  </footer>
+  <!-- Footer -->
+
+  
+
+
+
+</section>
+
+
+
+
+    <!-- JavaScript (Opcional) -->
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>

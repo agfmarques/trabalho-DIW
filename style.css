@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.picture{
+
+    width: 300px;
+    margin: 30px;
+}
+
+
+
+
+
+
+.picture2{
+
+width: 120px;
+margin: 20px;
+
+}
+
+.picture3{
+
+   width: 100%;
+   padding: 5%;
+}
+
+.botao{
+
+    float: right;
+    width: 150px;
+    margin: -50px !important;
+   
+}
+
+.imagem h2{
+
+    margin-left: 17px;
+    margin-bottom: 50px;
+    
+
+}
+
+
+.picture4{
+
+    width: 150px;
+    margin: 100px;
+    margin-bottom: -25px;
+    margin-top: 17px;
+ }
+
+.texto3{
+
+    margin-top: 100px;
+   
+    
+}
+
+.imagem2 h2{
+
+    margin: 75px
+    
+    
+}
+
+.texto4{
+
+    margin-top: 50px;
+}
+
+
+.videos div{
+    display:inline-block
+    
+}
+
+.videos h2{
+
+    width: 30px;
+margin: 10px;
+}
+
+
+.container-a{
+
+margin: 47px;
+}
+
+
+
+
+   
+
+.texto4 h1{
+
+  margin-bottom: 50px;
+}
+
+
+.rodape img{
+
+width: 100px;
+}
+
+.rodape{
+
+
+
+}
+
+
+    .angelo{
+
+        margin-top: 25px;
+    }
+
+
+
+    html { scroll-behavior: smooth; }
+
+
+    .card {
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 10px; /* Added */
+}
